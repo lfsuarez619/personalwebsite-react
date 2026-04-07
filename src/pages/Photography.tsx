@@ -22,7 +22,7 @@ export default function Photography() {
                     {photos.map((photo) => (
                         <figure key={photo.id} className="photo-card">
                             <img
-                                src={photo.src}
+                                src={`${import.meta.env.BASE_URL}${photo.src}`}
                                 alt={photo.alt}
                                 className="photo-card__image"
                                 loading="lazy"

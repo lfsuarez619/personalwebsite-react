@@ -1,3 +1,5 @@
+import portraitImage from "../assets/SelfPortraitOct17.svg";
+
 export default function Home() {
     return (
         <main className="home-page">
@@ -5,7 +7,7 @@ export default function Home() {
                 <div className="hero__media">
                     <figure className="hero__figure">
                         <img
-                            src="/photos/SelfPortraitOct17.svg"
+                            src={portraitImage}
                             alt="Portrait of Luis Suarez"
                             className="hero__image"
                         />
@@ -17,9 +19,7 @@ export default function Home() {
 
                 <div className="hero__content">
                     <p className="hero__eyebrow">Personal Website</p>
-
                     <h1 className="hero__title">Luis Suarez</h1>
-
                     <p className="hero__description">
                         Computer science graduate and web developer building thoughtful,
                         visually clean digital experiences.
