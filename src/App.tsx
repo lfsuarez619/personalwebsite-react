@@ -1,16 +1,21 @@
+import { Routes, Route } from "react-router";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Photography from "./pages/Photography";
+import Contact from "./pages/Contact";
+
 export default function App() {
     return (
-        <main
-            style={{
-                minHeight: "100vh",
-                background: "#030303",
-                color: "#f5f5f5",
-                display: "grid",
-                placeItems: "center",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-            }}
-        >
-            <h1>GitHub Pages test is working.</h1>
-        </main>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<About />} />
+                <Route path="projects" element={<Projects />} />
+                <Route path="photography" element={<Photography />} />
+                <Route path="contact" element={<Contact />} />
+            </Route>
+        </Routes>
     );
 }
