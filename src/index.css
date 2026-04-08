@@ -605,3 +605,22 @@ Edits the underline on NAV elements
         font-size: 1rem;
     }
 }
+.project-card__image-link {
+    display: block;
+    margin: 1rem 0 1.25rem;
+    text-decoration: none;
+}
+
+.project-card__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(245, 245, 245, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+    transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.project-card__image-link:hover .project-card__image {
+    transform: translateY(-2px);
+    opacity: 0.96;
+}
