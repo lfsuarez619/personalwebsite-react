@@ -7,15 +7,15 @@ export default function Photography() {
                 className="photography-section"
                 aria-labelledby="photography-title"
             >
-                <p className="photography-section__eyebrow">Photography</p>
 
                 <h1 id="photography-title" className="photography-section__title">
-                    Selected images.
+                    Selected Images.
                 </h1>
 
                 <p className="photography-section__intro">
-                    A small collection of photographic work focused on portraiture,
-                    atmosphere, and composition.
+                    A collection of photographic work taken from previous web projects.
+                    <br/>
+                    Focused on primarily on portraiture, atmosphere, and composition.
                 </p>
 
                 <div className="photo-grid">

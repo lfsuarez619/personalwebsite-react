@@ -4,7 +4,6 @@ export default function Projects() {
     return (
         <main className="projects-page">
             <section className="projects-section" aria-labelledby="projects-title">
-                <p className="projects-section__eyebrow">Projects</p>
 
                 <h1 id="projects-title" className="projects-section__title">
                     Projects and client work.

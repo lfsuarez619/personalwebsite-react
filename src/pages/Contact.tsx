@@ -2,10 +2,9 @@ export default function Contact() {
     return (
         <main className="contact-page">
             <section className="contact-section" aria-labelledby="contact-title">
-                <p className="contact-section__eyebrow">Contact</p>
 
                 <h1 id="contact-title" className="contact-section__title">
-                    Let’s connect.
+                    To Contact
                 </h1>
 
                 <p className="contact-section__intro">

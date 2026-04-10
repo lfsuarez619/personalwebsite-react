@@ -18,11 +18,9 @@ export default function Home() {
                 </div>
 
                 <div className="hero__content">
-                    <p className="hero__eyebrow">Personal Website</p>
                     <h1 className="hero__title">Luis Suarez</h1>
                     <p className="hero__description">
-                        Computer science graduate and web developer building thoughtful,
-                        visually clean digital experiences.
+                        Web Developer.
                     </p>
                 </div>
             </section>
