@@ -1,6 +1,7 @@
 import { photos } from "../data/photos";
 
 export default function Photography() {
+    const sortedPhotos = [...photos].sort((a, b) => b.id - a.id);
     return (
         <main className="photography-page">
             <section
@@ -13,13 +14,13 @@ export default function Photography() {
                 </h1>
 
                 <p className="photography-section__intro">
-                    A collection of photographic work taken from previous web projects.
+                    A collection of photographic works taken from previous web projects.
                     <br/>
-                    Focused on primarily on portraiture, atmosphere, and composition.
+                    Focused primarily on portraiture, atmosphere, and composition.
                 </p>
 
                 <div className="photo-grid">
-                    {photos.map((photo) => (
+                    {sortedPhotos.map((photo) => (
                         <figure key={photo.id} className="photo-card">
                             <img
                                 src={`${import.meta.env.BASE_URL}${photo.src}`}

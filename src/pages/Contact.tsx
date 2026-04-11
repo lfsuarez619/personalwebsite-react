@@ -13,7 +13,8 @@ export default function Contact() {
                 </p>
 
                 <div className="contact-list">
-                    <a className="contact-link" href="lfsuarez619@gmail.com">
+                    <a className="contact-link"
+                       href="mailto:lfsuarez619@gmail.com?subject=I%woukd%love%20to%20talk%20to%20you!">
                         lfsuarez619@gmail.com
                     </a>
 
