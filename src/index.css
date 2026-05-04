@@ -163,9 +163,7 @@ main {
 }
 
 .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     z-index: 100;
     background: transparent;
@@ -181,6 +179,38 @@ main {
     justify-content: space-evenly;
 }
 
+.site-nav__dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* invisible bridge so the submenu does not vanish while moving the mouse downward */
+.site-nav__dropdown::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 0.85rem;
+}
+
+.site-nav__toggle {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+}
+
+.site-nav__link,
+.site-nav__toggle,
+.site-nav__submenu-link {
+    text-decoration: none;
+}
+
 .site-nav__link {
     position: relative;
     color: var(--text);
@@ -191,51 +221,88 @@ main {
     transition: opacity 180ms ease;
 }
 
-.site-nav__link:hover {
+.site-nav__link:hover,
+.site-nav__toggle:hover,
+.site-nav__submenu-link:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+
+.site-nav__submenu {
+    position: absolute;
+    top: calc(100% + 0.85rem);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 12rem;
+    padding: 0.75rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(3, 3, 3, 0.96);
+    border: 1px solid rgba(245, 245, 245, 0.14);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+}
+
+.site-nav__dropdown:hover .site-nav__submenu,
+.site-nav__dropdown:focus-within .site-nav__submenu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.site-nav__submenu-link {
+    position: relative;
+    color: var(--text);
+    font-size: 0.95rem;
+    opacity: 0.82;
+    transition: opacity 180ms ease;
+}
+
+.site-nav__submenu-link--active {
     opacity: 1;
 }
 
-.site-nav__link--active {
-    opacity: 1;
-}
-
-/*
-Edits the underline on NAV elements
- */
-.site-nav__link--active::after {
+.site-nav__submenu-link--active::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -0.35rem;
+    bottom: -0.25rem;
     height: 1px;
     background: var(--text);
 }
 
-@media (max-width: 980px) {
-    .site-nav {
-        padding: 0 1.5rem;
-        gap: 1.25rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: center;
-    }
+.home-page,
+.about-page,
+.projects-page,
+.photography-page,
+.videography-page,
+.contact-page {
+    padding-top: 2rem;
+}
 
-    .site-nav__link {
-        font-size: 0.95rem;
+@media (max-width: 980px) {
+    .home-page,
+    .about-page,
+    .projects-page,
+    .photography-page,
+    .videography-page,
+    .contact-page {
+        padding-top: 1.5rem;
     }
 }
 
 @media (max-width: 640px) {
-    .site-nav {
-        height: auto;
-        min-height: var(--nav-height);
-        padding: 1rem;
-        gap: 0.9rem 1.25rem;
-    }
-
-    .site-nav__link {
-        font-size: 0.92rem;
+    .home-page,
+    .about-page,
+    .projects-page,
+    .photography-page,
+    .videography-page,
+    .contact-page {
+        padding-top: 1rem;
     }
 }
 
@@ -517,6 +584,78 @@ Edits the underline on NAV elements
 
     .photo-card__caption {
         font-size: 0.85rem;
+    }
+}
+
+.videography-page {
+    min-height: 100vh;
+    padding: calc(var(--nav-height) + 3rem) 2.5rem 4rem;
+}
+
+.videography-section {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+}
+
+.videography-section__title {
+    margin: 0 0 1rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+}
+
+.videography-section__intro {
+    margin: 0 0 2.5rem;
+    max-width: 38rem;
+    color: var(--muted);
+    line-height: 1.85;
+}
+
+.video-card {
+    margin: 0;
+}
+
+.video-card__embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border: 1px solid rgba(245, 245, 245, 0.14);
+    background: #000;
+}
+
+.video-card__iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-card__caption {
+    margin-top: 0.8rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 980px) {
+    .videography-page {
+        padding: calc(var(--nav-height) + 1.5rem) 1.5rem 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .videography-page {
+        padding: calc(var(--nav-height) + 1rem) 1rem 2rem;
+    }
+
+    .videography-section__title {
+        font-size: clamp(2.2rem, 11vw, 3.5rem);
+    }
+
+    .videography-section__intro {
+        line-height: 1.75;
     }
 }
 

@@ -10,7 +10,7 @@ export default function Photography() {
             >
 
                 <h1 id="photography-title" className="photography-section__title">
-                    Selected Images.
+                    Photography
                 </h1>
 
                 <p className="photography-section__intro">

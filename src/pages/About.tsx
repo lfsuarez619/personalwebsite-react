@@ -9,7 +9,7 @@ export default function About() {
 
                 <div className="about-section__body">
                     <p>
-                        Luis is a computer science graduate and web developer with an
+                        Luis is a web developer with an
                         interest in building websites that unify purposeful, eclectic web
                         elements into a singular, truly meaning experience.
 
